@@ -25,8 +25,7 @@ module.exports = (sequelize) => {
     },
     platforms:{
       type:DataTypes.ARRAY,
-      allowNull:false,
-      defaultValue:[]
+      allowNull:false
     }
   },{
     timestamps:false
