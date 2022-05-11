@@ -1,16 +1,9 @@
-import React,{Component,Link} from "react";
-
-// export default function LandingPage(){
-//     return(
-//         <div>
-
-//         </div>
-//     )
-// }
+import React,{Component} from "react";
+import { Link } from "react-router-dom";
 
 export default class LandingPage extends Component{
     render(){
-        return (
+        return(
             <div>
                 <h1>Welcome!!!</h1>
                 <p>Ready, set</p>

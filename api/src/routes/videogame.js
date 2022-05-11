@@ -18,7 +18,7 @@ router.get('/:idVideogame',async(req,res,next)=>{
     try {
         const id=req.params.idVideogame;
         if(id.length===36){ //BD
-            const videogame=await Videogame.findByPk(id);
+            const videogame=await Videogame.findOne({include:{model:Genre, as:'genres',where:{id:`${id}`}}});
             if(videogame!==null){
                 res.status(200).json(videogame);
             }else{
@@ -27,6 +27,7 @@ router.get('/:idVideogame',async(req,res,next)=>{
         }else{ //API
             const response = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
             const videogameApi=response.data
+            const genres=videogameApi.map((elem)=>{return {id:elem.id,name:elem.name}})
             const videogameFilt={id:videogameApi.id,name:videogameApi.name,description:videogameApi.description,released:videogameApi.released, rating:videogameApi.rating, platforms:videogameApi.platforms}
             res.status(200).send(videogameFilt)
         }
@@ -40,10 +41,10 @@ router.get('/:idVideogame',async(req,res,next)=>{
 router.post('/',async(req,res,next)=>{
     
     try {
-        const {name,description,released, rating, platforms}=req.body;
+        const {name,description,released, rating, platforms,genres}=req.body;
         const newVideogame=await Videogame.create({name,description,released, rating, platforms})
+        newVideogame.setGenres(genres);
         res.status(201).json(newVideogame)
-        console.log(typeof newVideogame.id)
     } catch (error) {
         res.status(404).json(`Error: ${error.message}`);
     }
