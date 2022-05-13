@@ -1,9 +1,11 @@
-import {GET_VIDEOGAMES, GET_VIDEOGAME_DETAIL, GET_GENRES} from '../action_defs/index.js'
+import {GET_VIDEOGAMES, GET_VIDEOGAME_DETAIL, GET_GENRES, ADD_VIDEOGAME, SET_VIDEOGAME, SET_ERRORS} from '../action_defs/index.js'
 
 const initialState={
     videogames:[],
     videogameDetail:{},
-    genres:[]
+    genres:[],
+    newVideogame:{},
+    newVideogameErrors:{}
 }
 
 
@@ -25,6 +27,24 @@ const reducer=(state=initialState,action)=>{
             return{
                 ...state,
                 genres:action.payload
+            }
+        }
+        case(ADD_VIDEOGAME):{
+            return{
+                ...state,
+                videogames:state.videogames.push(action.payload)
+            }
+        }
+        case(SET_VIDEOGAME):{
+            return{
+                ...state,
+                newVideogame:action.payload
+            }
+        }
+        case(SET_ERRORS):{
+            return{
+                ...state,
+                newVideogameErrors:action.payload
             }
         }
         default:{

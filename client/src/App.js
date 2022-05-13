@@ -13,7 +13,7 @@ function App() {
       <Route exact path='/' render={()=>(<LandingPage/>)}/>{/* Home */}
      <Route path='/videogames' render={()=>(<NavBar/>)}/> {/* NavBar */}
      <Route exact path='/videogames' render={()=>(<Home/>)}/>{/* Home */}
-     <Route path='/videogames/:idVideogame' render={()=>(<VideogameDetail/>)}/> {/* Ruta detalle */}
+     <Route exact path='/videogame/:idVideogame' render={()=>(<VideogameDetail/>)}/> {/* Ruta detalle */}
      <Route path='/videogames/create' render={()=>(<VideogameCreate/>)}/> {/* Ruta creacion */}
     </div>
   );

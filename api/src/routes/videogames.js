@@ -19,12 +19,12 @@ const {API_KEY}=process.env
 router.get('/',async(req,res,next)=>{
     try {
         if(!req.query.hasOwnProperty("name")){
-            var videogames =await Videogame.findAll({include:{model:Genre,as:'genres'}}); //BD
+            var videogames =await Videogame.findAll({include:Genre}); //BD
             await recorridoAPI(`https://api.rawg.io/api/games?key=${API_KEY}`,100,videogames) //APi
             res.status(200).json(videogames);
         }else{ //?name=
             const palabra=req.query.name;
-            var videogames =await Videogame.findAll({include:{model:Genre,as:'genres',where:{name:{[Op.iLike]:`%${palabra}%`}}}}); //BD
+            var videogames =await Videogame.findAll({where:{name:{[Op.iLike]:`%${palabra}%`}},include:Genre}); //BD
             await recorridoAPI(`https://api.rawg.io/api/games?key=${API_KEY}&search=${palabra}`,15,videogames); //API
             res.status(200).json(videogames);
         }
@@ -40,8 +40,8 @@ const recorridoAPI=async function(url,limite,array){
         const response= await axios.get(url);
         response.data.results.forEach(videogameApi => {
             if(array.length<limite){
-                var genero=videogameApi.map((elem)=>{return {id:elem.id,name:elem.name}})
-                array.push({id:videogameApi.id,name:videogameApi.name,description:videogameApi.description,released:videogameApi.released, rating:videogameApi.rating, platforms:videogameApi.platforms,genres:genero})}
+                var genero=videogameApi.genres.map((elem)=>{return {id:elem.id,name:elem.name}})
+                array.push({id:videogameApi.id,name:videogameApi.name,description:videogameApi.description,released:videogameApi.released, rating:videogameApi.rating, platforms:videogameApi.platforms,genres:genero,image:videogameApi.image})}
         });
         if(response.data.next!==null){url=response.data.next; }
         else{break;}

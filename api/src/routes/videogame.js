@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const https =require('https')
 const router = Router();
-const {Videogame} = require('../db.js');
+const {Videogame,Genre} = require('../db.js');
 const {API_KEY}=process.env
 const axios=require('axios')
 
@@ -15,10 +15,11 @@ const axios=require('axios')
 // - Crea un videojuego en la base de datos
 
 router.get('/:idVideogame',async(req,res,next)=>{
+    
     try {
         const id=req.params.idVideogame;
         if(id.length===36){ //BD
-            const videogame=await Videogame.findOne({include:{model:Genre, as:'genres',where:{id:`${id}`}}});
+            const videogame=await Videogame.findOne({where:{id:`${id}`},include:Genre});
             if(videogame!==null){
                 res.status(200).json(videogame);
             }else{
@@ -27,12 +28,12 @@ router.get('/:idVideogame',async(req,res,next)=>{
         }else{ //API
             const response = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
             const videogameApi=response.data
-            const genres=videogameApi.map((elem)=>{return {id:elem.id,name:elem.name}})
-            const videogameFilt={id:videogameApi.id,name:videogameApi.name,description:videogameApi.description,released:videogameApi.released, rating:videogameApi.rating, platforms:videogameApi.platforms}
+            const genres=videogameApi.genres.map((elem)=>{return {id:elem.id,name:elem.name}})
+            const videogameFilt={id:videogameApi.id,name:videogameApi.name,description:videogameApi.description,released:videogameApi.released, rating:videogameApi.rating, platforms:videogameApi.platforms,genres}
             res.status(200).send(videogameFilt)
         }
     } catch (error) {
-        res.status(404).send(`No existe videogame con id ${id}`)
+        res.status(404).send(`${error}`)
     }
     
 
@@ -41,9 +42,12 @@ router.get('/:idVideogame',async(req,res,next)=>{
 router.post('/',async(req,res,next)=>{
     
     try {
-        const {name,description,released, rating, platforms,genres}=req.body;
-        const newVideogame=await Videogame.create({name,description,released, rating, platforms})
-        newVideogame.setGenres(genres);
+        const {name,description,image,released, rating, platforms,genres}=req.body;
+        const newVideogame=await Videogame.create({name,description,released, rating, platforms,image})
+        genres.forEach(element => {
+            newVideogame.addGenres(element.id)
+        });
+        // newVideogame.setGenres(genres);
         res.status(201).json(newVideogame)
     } catch (error) {
         res.status(404).json(`Error: ${error.message}`);

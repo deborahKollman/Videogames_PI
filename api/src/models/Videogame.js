@@ -19,14 +19,20 @@ module.exports = (sequelize) => {
       allowNull:false
     },
     released:{
-      type:DataTypes.DATEONLY
+      type:DataTypes.DATEONLY,
+      defaultValue:DataTypes.NOW
     },
     rating:{
-      type:DataTypes.FLOAT
+      type:DataTypes.FLOAT,
+      defaultValue:0
     },
     platforms:{
       type:DataTypes.ARRAY(DataTypes.JSON),
       allowNull:false
+    },
+    image:{
+      type:DataTypes.TEXT,
+      defaultValue:''
     }
   },{
     timestamps:false
