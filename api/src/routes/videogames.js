@@ -41,7 +41,7 @@ const recorridoAPI=async function(url,limite,array){
         response.data.results.forEach(videogameApi => {
             if(array.length<limite){
                 var genero=videogameApi.genres.map((elem)=>{return {id:elem.id,name:elem.name}})
-                array.push({id:videogameApi.id,name:videogameApi.name,description:videogameApi.description,released:videogameApi.released, rating:videogameApi.rating, platforms:videogameApi.platforms,genres:genero,image:videogameApi.image})}
+                array.push({id:videogameApi.id,name:videogameApi.name,description:videogameApi.description,released:videogameApi.released, rating:videogameApi.rating, platforms:videogameApi.platforms,genres:genero,image:videogameApi.background_image})}
         });
         if(response.data.next!==null){url=response.data.next; }
         else{break;}

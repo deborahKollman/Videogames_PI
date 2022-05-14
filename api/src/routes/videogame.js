@@ -29,7 +29,7 @@ router.get('/:idVideogame',async(req,res,next)=>{
             const response = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
             const videogameApi=response.data
             const genres=videogameApi.genres.map((elem)=>{return {id:elem.id,name:elem.name}})
-            const videogameFilt={id:videogameApi.id,name:videogameApi.name,description:videogameApi.description,released:videogameApi.released, rating:videogameApi.rating, platforms:videogameApi.platforms,genres}
+            const videogameFilt={id:videogameApi.id,name:videogameApi.name,description:videogameApi.description,released:videogameApi.released, rating:videogameApi.rating, platforms:videogameApi.platforms,genres,image:videogameApi.background_image}
             res.status(200).send(videogameFilt)
         }
     } catch (error) {
