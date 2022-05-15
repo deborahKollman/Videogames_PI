@@ -1,0 +1,38 @@
+.nav_bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px;
+    background: linear-gradient(to bottom,blue,cyan);
+    
+    font-variant: small-caps;
+}
+
+.selected{
+    padding: 20px 15px;
+    border-radius: 10px 0px 10px 0px;
+    background:linear-gradient(to bottom,  midnightblue,blue);
+}
+
+.links a{
+    text-decoration: none;
+    margin-left: 20px;
+    color: white;
+}
+
+.buscador a{
+    text-decoration: none;
+    color:white
+}
+
+.buscador input{
+    
+    border-radius: 10px;
+}
+
+.buscador button{
+    background:linear-gradient(to bottom,  midnightblue,blue);
+    margin-left: 10px;
+    border-radius: 10px;
+}
+

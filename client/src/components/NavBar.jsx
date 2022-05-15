@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {NavLink, Link} from 'react-router-dom'
+import './styles/NavBar.css'
 
 export default function NavBar() {
     const [state,setState]=useState("");
@@ -11,13 +12,13 @@ export default function NavBar() {
 
     
     return(
-        <nav>
-            <div>
-                <NavLink to='/videogames'>Home</NavLink>
-                <NavLink to='/videogames/create'>Create</NavLink>
+        <nav className="nav_bar">
+            <div className="links">
+                <NavLink to='/videogames' activeClassName="selected" exact>Home</NavLink>
+                <NavLink to='/videogames/create' activeClassName="selected" exact>Create</NavLink>
             </div>
-            <div>
-                <input value={state} onChange={handleInputChange}/>
+            <div className="buscador">
+                <input value={state} placeholder="Buscar por nombre" onChange={handleInputChange}/>
                 <button ><Link to={`videogames?name=${state}`} >Buscar</Link></button>
             </div>
         </nav>

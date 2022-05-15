@@ -1,11 +1,13 @@
-import {GET_VIDEOGAMES, GET_VIDEOGAME_DETAIL, GET_GENRES, ADD_VIDEOGAME, SET_VIDEOGAME, SET_ERRORS, GET_VIDEOGAME_BY_NAME, FILTER_BY_GENRE, FILTER_BY_GAME, ORDER_BY_NAME, ORDER_BY_RATING} from '../action_defs/index.js'
+import {GET_VIDEOGAMES, GET_VIDEOGAME_DETAIL, GET_GENRES, ADD_VIDEOGAME, SET_VIDEOGAME, SET_ERRORS, GET_VIDEOGAME_BY_NAME, ORDER_VIDEOGAMES, FILTER_GENRES, FILTER_VIDEOGAMES, SET_FILTER_ORDER} from '../action_defs/index.js'
 
 const initialState={
     videogames:[],
     videogameDetail:{},
     genres:[],
     newVideogame:{},
-    newVideogameErrors:{}
+    newVideogameErrors:{},
+    videogamesFilteredOrdered:[],
+    filterOrderTypes:{}
 }
 
 
@@ -14,7 +16,9 @@ const reducer=(state=initialState,action)=>{
         case(GET_VIDEOGAMES):{
             return {
                 ...state,
-                videogames:action.payload
+                videogames:action.payload,
+                videogamesFilteredOrdered:action.payload,
+                filterOrderTypes:{filterGenre:'default',filterGame:'default',order:'default'}
             }
         }
         case(GET_VIDEOGAME_DETAIL):{
@@ -26,7 +30,9 @@ const reducer=(state=initialState,action)=>{
         case(GET_VIDEOGAME_BY_NAME):{
             return{
                 ...state,
-                videogames:action.payload
+                videogames:action.payload,
+                videogamesFilteredOrdered:action.payload,
+                filterOrderTypes:{filterGenre:'default',filterGame:'default',order:'default'}
             }
         }
         case(GET_GENRES):{
@@ -54,64 +60,88 @@ const reducer=(state=initialState,action)=>{
                 newVideogameErrors:action.payload
             }
         }
-        case(FILTER_BY_GENRE):{
-            const genre=action.payload;
-            const games=[]
-            state.videogames.forEach(elem=>{
-                let esta=false;
-                elem.genres.forEach(element => {
-                    if(element.name===genre) esta=true
-                });
-                if(esta) games.push(elem)
-            })
-            return {
-                ...state,
-                videogames:games
-            }
-        }
-        case(FILTER_BY_GAME):{
-            const origin=action.payload; 
-            var games=[]
-            state.videogames.forEach(elem=>{
-                if(origin==='made' && elem.id.length===36) games.push(elem) 
-                if(origin==='api' && elem.id.length<36) games.push(elem)
-            })
+        case(FILTER_VIDEOGAMES):{
+            var oldState=state.filterOrderTypes
+            oldState={...oldState,filterGame:action.payload}
             return{
                 ...state,
-                videogames:games
-            }
-
-        }
-        case(ORDER_BY_NAME):{
-            let ordered;
-            if(action.payload==='asc'){
-                ordered=state.videogames.sort((a,b)=>{
-                    return a.localeCompare(b)   
-                })
-            }else{
-                ordered=state.videogames.sort((a,b)=>{
-                    return b.localeCompare(a)    
-                })
-            }
-            return{
-                ...state,
-                videogames:ordered
+                filterOrderTypes:oldState
             }
         }
-        case(ORDER_BY_RATING):{
-            let ordered;
-            if(action.payload==='asc'){
-                ordered=state.videogames.sort((a,b)=>{
-                    return a.rating - b.rating    
-                })
-            }else{
-                ordered=state.videogames.sort((a,b)=>{
-                    return b.rating - a.rating    
-                })
-            }
+        case(FILTER_GENRES):{
+            var oldState=state.filterOrderTypes
+            oldState={...oldState,filterGenre:action.payload}
             return{
                 ...state,
-                videogames:ordered
+                filterOrderTypes:oldState
+            }
+        }
+        case(ORDER_VIDEOGAMES):{
+            var oldState=state.filterOrderTypes
+            oldState={...oldState,order:action.payload}
+            return{
+                ...state,
+                filterOrderTypes:oldState
+            }
+        }
+        case(SET_FILTER_ORDER):{
+            var games=state.videogames.map(elem=>{return elem});
+            if(state.filterOrderTypes.filterGenre!=="default"){
+                games=games.filter((game)=>{
+                    var hasGenre=false
+                    game.genres.forEach((genre)=>{
+                        if(genre.name===state.filterOrderTypes.filterGenre) hasGenre= true;
+                    })
+                    return hasGenre
+                })
+            }
+            if(state.filterOrderTypes.filterGame!=="default"){
+                games=games.filter((game)=>{
+                   if(state.filterOrderTypes.filterGame==='made'){
+                        return game.id.toString().length===36
+                   }else{
+                       return state.filterOrderTypes.filterGame==='api' && game.id.toString().length<36
+                   }
+                })
+            }
+            
+            if(state.filterOrderTypes.order!=="default"){
+                switch(state.filterOrderTypes.order){
+                    case("alphabetic_des"):{
+                        games=games.sort((a,b)=>{
+                            if(a.name.toUpperCase() <b.name.toUpperCase()){return -1}
+                            else if(a.name.toUpperCase()>b.name.toUpperCase()){return 1} 
+                            else{return 0}
+                        })
+                        break;
+                    }
+                    case("alphabetic_asc"):{
+                        games=games.sort((a,b)=>{
+                           if(a.name.toUpperCase() <b.name.toUpperCase()){return 1}
+                            else if(a.name.toUpperCase()>b.name.toUpperCase()){return -1} 
+                            else{return 0}
+                        })
+                        break;
+                    }
+                    case("rating_asc"):{
+                        games=games.sort((a,b)=>{
+                            return a.rating - b.rating
+                        })
+                        break;
+                    }
+                    case("rating_des"):{
+                        games=games.sort((a,b)=>{
+                            return b.rating - a.rating
+                        })
+                        break;
+                    }
+                    default:games=games;break;
+                }
+            }
+            console.log(games)
+            return{
+                ...state,
+                videogamesFilteredOrdered:games
             }
         }
         default:{

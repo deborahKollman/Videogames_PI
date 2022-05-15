@@ -1,0 +1,28 @@
+.game_card{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    padding: 1%;
+    margin: 2%;
+    background: linear-gradient(to bottom, magenta, orange);
+    border-radius: 10px;
+    width: 300px;
+    align-items: center;
+    
+    font-weight: bold;
+}
+
+.card_details img{
+    width: 250px;
+    height: auto;
+}
+
+.card_details a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+

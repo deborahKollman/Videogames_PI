@@ -8,7 +8,6 @@ export default class Pagination extends Component{
         this.state={videogames:this.props.videogames,currentPage:0}
         this.nextPage=this.nextPage.bind(this)
         this.prevPage=this.prevPage.bind(this)
-        console.log(this.props.videogames)
     }
 
     prevPage(e){

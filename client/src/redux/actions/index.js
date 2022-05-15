@@ -1,4 +1,4 @@
-import {GET_VIDEOGAMES,GET_GENRES,ADD_VIDEOGAME, SET_VIDEOGAME, SET_ERRORS,GET_VIDEOGAME_DETAIL, GET_VIDEOGAME_BY_NAME, FILTER_BY_GENRE, FILTER_BY_GAME, ORDER_BY_NAME, ORDER_BY_RATING} from '../action_defs/index.js'
+import {GET_VIDEOGAMES,GET_GENRES,ADD_VIDEOGAME, SET_VIDEOGAME, SET_ERRORS,GET_VIDEOGAME_DETAIL, GET_VIDEOGAME_BY_NAME, ORDER_VIDEOGAMES, FILTER_VIDEOGAMES, FILTER_GENRES,SET_FILTER_ORDER} from '../action_defs/index.js'
 import axios from 'axios'
 
 export const getAllVideogames=()=>{
@@ -57,26 +57,26 @@ export const setVideogameErrors=(errors)=>{
     }
 }
 
-export const filterByGenre=(genre)=>{
+export const filterVideogames=(filter)=>{
     return{
-        type:FILTER_BY_GENRE, payload:genre
+        type:FILTER_VIDEOGAMES, payload:filter
     }
 }
 
-export const filterByVideogame=(origin)=>{
+export const filterGenre=(filter)=>{
     return{
-        type:FILTER_BY_GAME, payload:origin
+        type:FILTER_GENRES, payload:filter
     }
 }
 
-export const orderByName=(asc_des)=>{
+export const orderVideogames=(order)=>{
     return{
-        type:ORDER_BY_NAME, payload:asc_des
+        type:ORDER_VIDEOGAMES, payload:order
     }
 }
 
-export const orderByRating=(asc_des)=>{
+export const filterOrder=()=>{
     return{
-        type:ORDER_BY_RATING, payload:asc_des
+        type:SET_FILTER_ORDER, payload:""
     }
 }
