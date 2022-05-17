@@ -1,5 +1,5 @@
 import { Component } from "react";
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import './styles/VideogameCard.css'
 
 export default class VideogameCard extends Component{
@@ -10,17 +10,23 @@ export default class VideogameCard extends Component{
     
     render(){
         return(
-            <div className="game_card">
+            <div className="videogame_cards">
                 {this.props.hasOwnProperty("nombre")?
-                <div className="card_details">
-                    <p><NavLink to={`/videogames/videogame/${this.props.id}`} activeClassName="current" exact >{this.props.nombre}</NavLink></p>
-                    <img src={this.props.imagen} alt="Imagen"/>
-                    <p>Generos:</p>
-                    <ul>
-                        {this.props.generos.map((elem)=>{
-                            return(<li>{elem.name}</li>)
-                        })}
-                    </ul>
+                <div className="game_card">
+                    <div className="card_details">
+                        <h2>{this.props.nombre}</h2>
+                        <img src={this.props.imagen} alt="Imagen"/>
+                        <div className="genres">
+                            {this.props.generos.map((elem)=>{
+                                return(<label>{elem.name}</label>)
+                            })}
+                        </div>
+                        <label><Link to={`/videogames/videogame/${this.props.id}`} >Jugar ahora</Link></label>
+                    </div>
+                    <div className="game_buttons">
+                        <img src="https://cdn-icons-png.flaticon.com/512/37/37434.png"/>
+                        <img src="https://cdn-icons-png.flaticon.com/512/38/38462.png"/>
+                    </div>
                 </div>:
                 <h1>Cargando card</h1>
                 }

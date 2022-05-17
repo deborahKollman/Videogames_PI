@@ -1,0 +1,21 @@
+.pagination{
+    display:flex;
+    flex-direction: column;
+}
+
+.page_buttons{
+    display: flex;
+    justify-content: center;
+
+}
+
+.page_buttons label{
+    font-size: 30px;
+    color: white;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.page_buttons input{
+    width: 60px;
+}

@@ -48,9 +48,9 @@ router.post('/',async(req,res,next)=>{
             newVideogame.addGenres(element.id)
         });
         // newVideogame.setGenres(genres);
-        res.status(201).json(newVideogame)
+        res.status(201).send("Juego creado exitosamente")
     } catch (error) {
-        res.status(404).json(`Error: ${error.message}`);
+        res.status(404).send(`ERROR:${error.message}`);
     }
    
 })

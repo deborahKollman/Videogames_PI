@@ -6,6 +6,7 @@ const initialState={
     genres:[],
     newVideogame:{},
     newVideogameErrors:{},
+    newVideogameMessage:"",
     videogamesFilteredOrdered:[],
     filterOrderTypes:{}
 }
@@ -42,22 +43,34 @@ const reducer=(state=initialState,action)=>{
             }
         }
         case(ADD_VIDEOGAME):{
-            return{
-                ...state,
-                newVideogame:{name:"",description:"",rating:"",released:"",image:"",genres:[],platforms:[]},
-                newVideogameErrors:{name:"",description:"",rating:"",released:"",image:"",genres:[],platforms:[]}
+            var error='ERROR';
+            if(action.payload.contains(error)){
+                return{
+                    ...state,
+                    newVideogameMessage:action.payload
+                }
+            }else{
+                return{
+                    ...state,
+                    newVideogame:{name:"",description:"",rating:"",released:"",image:"",genres:[],platforms:[]},
+                    newVideogameErrors:{name:"",description:"",rating:"",released:"",image:"",genres:[],platforms:[]},
+                    newVideogameMessage:action.payload
+                }
             }
+            
         }
         case(SET_VIDEOGAME):{
             return{
                 ...state,
-                newVideogame:action.payload
+                newVideogame:action.payload,
+                newVideogameMessage:""
             }
         }
         case(SET_ERRORS):{
             return{
                 ...state,
-                newVideogameErrors:action.payload
+                newVideogameErrors:action.payload,
+                newVideogameMessage:""
             }
         }
         case(FILTER_VIDEOGAMES):{

@@ -41,7 +41,7 @@ export const addVideogame=({name,description,image,released, rating,genres, plat
         return axios.post('http://localhost:3001/videogame',
         {name,description,image,released, rating:parseFloat(rating), platforms,genres})
         .then(response=>dispatch({type:ADD_VIDEOGAME,payload:response.data}))
-        .catch(err=>console.log(`ERROR: ${err.message}`))
+        .catch(err=>dispatch({type:ADD_VIDEOGAME,payload:`ERROR: ${err.message}`}))
     }
 }
 

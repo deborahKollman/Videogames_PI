@@ -15,6 +15,10 @@
     border-radius: 10px;
 }
 
+.home_options h1{
+    padding-left: 100px;
+}
+
 .filter_order_options{
     display: flex;
     flex-direction: row;

@@ -1,0 +1,58 @@
+.create{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 60px 60px 60px;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/002/015/090/small/retro-style-game-pattern-grid-background-free-video.jpg");
+    max-width: 100%;
+    min-height: 100%;
+    background-color: #480B7B;
+    color: white;
+    
+}
+
+.create h1{
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: black;
+}
+
+.create_options{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.create_options input{
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.create_options select{
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.create_lists{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.create_lists label{
+    padding-left: 30px;
+}
+
+.create_lists li{
+    text-decoration: none;
+}
+
+.create_errors{
+    color: red;
+}
+
+.create_button{
+    width: 100px;
+}
+
+.create_message{
+    color: limegreen;
+}
