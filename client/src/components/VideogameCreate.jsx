@@ -109,7 +109,7 @@ export default function VideogameCreate(){
             {newVideogame.platforms.map((elem)=><label>{elem.name}</label>)}
             </div>:<div/>
             }
-            <button className='create_button' disabled={Object.values(newVideogameErrors).length?true:false} onClick={handleSubmitVideogame} >Agregar juego</button>
+            <button className='create_button' disabled={Object.values(newVideogameErrors).length?true:false} onClick={handleSubmitVideogame} >Crear videojuego</button>
             {newVideogameMessage!=="" && <label className='create_message' >{`${newVideogameMessage}`}</label>}
         </div>
     )

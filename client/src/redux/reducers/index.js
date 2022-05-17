@@ -82,7 +82,7 @@ const reducer=(state=initialState,action)=>{
             }
         }
         case(FILTER_GENRES):{
-            var oldState=state.filterOrderTypes
+            let oldState=state.filterOrderTypes
             oldState={...oldState,filterGenre:action.payload}
             return{
                 ...state,
@@ -90,7 +90,7 @@ const reducer=(state=initialState,action)=>{
             }
         }
         case(ORDER_VIDEOGAMES):{
-            var oldState=state.filterOrderTypes
+            let oldState=state.filterOrderTypes
             oldState={...oldState,order:action.payload}
             return{
                 ...state,
@@ -148,10 +148,9 @@ const reducer=(state=initialState,action)=>{
                         })
                         break;
                     }
-                    default:games=games;break;
+                    default:;break;
                 }
             }
-            console.log(games)
             return{
                 ...state,
                 videogamesFilteredOrdered:games

@@ -25,9 +25,8 @@
 }
 
 .card_details img{
-    width: 250px;
-    height: auto;
-    
+    max-width: 250px;
+    max-height: 200px;
 }
 
 .card_details a{
@@ -39,7 +38,9 @@
 
 .genres{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px;
+    align-items: flex-start;
 }
 
 .genres label{

@@ -4,19 +4,8 @@
     background-image: url("https://static.vecteezy.com/system/resources/thumbnails/002/015/090/small/retro-style-game-pattern-grid-background-free-video.jpg");
     background-color: #480B7B;
     color: white;
-    align-items: center;
-}
-
-.game_title h1{
-    font-size: 40px;
-    text-shadow: 5px 5px 0px white;
-    background-image: linear-gradient(to bottom,aqua,magenta);
-    background-clip: text;
-    color: transparent;
-}
-
-.game_details p{
-    font-size: 20px;
+    font-family: pressStart;
+    padding: 100px;
 }
 
 .game_details img{
@@ -24,24 +13,50 @@
     border-radius: 10px;
 }
 
+
 .game_title{
-    margin-left: 100px;
-    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+    border-radius: 10px;
+    background:linear-gradient(to bottom, magenta,cyan);
 }
+
+.game_title h1{
+    font-size: 50px;
+    
+}
+
 
 .game_body{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+}
+
+.game_description{
+    padding: 20px;
+    border-radius: 10px;
+    background:linear-gradient(to bottom, magenta,cyan);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.game_description h2{
+    text-decoration: underline;
+}
+
+.game_description p{
+    text-align: justify;
 }
 
 .game_options{
-    display: flex;
-    flex-direction: column;
-    margin-left: 100px;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 10px;
+    background:linear-gradient(to bottom, magenta,cyan);
 }
 
-.game_options p{
-    font-size:20px;
-    
+.game_options ul{
+    list-style-type: '>';
 }

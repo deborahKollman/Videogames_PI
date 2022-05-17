@@ -59,8 +59,10 @@ class Home extends Component{
                 {this.props.videogames.length!==0?
                 <div>
                     <div className="home_options">
-                        {this.props.location.search===""?<h1>Home</h1>
-                        :<h2>{`Resultados de busqueda para '${this.props.location.search.slice(this.props.location.search.indexOf("=")+1)}': ${this.props.videogamesFilteredOrdered.length} resultados`}</h2>}
+                        <div className="home_title">
+                        {this.props.location.search===""?<div><h1>Henry Videogames</h1><p>{`Mostrando ${this.props.videogamesFilteredOrdered.length} resultados`}</p></div>
+                        :<p>{`Resultados de busqueda para '${this.props.location.search.slice(this.props.location.search.indexOf("=")+1)}': ${this.props.videogamesFilteredOrdered.length} resultados`}</p>}
+                        </div>
                         <div className="filter_order_options">
                             <div>
                                 <label>Filtrar por genero: </label>
@@ -101,9 +103,9 @@ class Home extends Component{
                             <Busqueda videogames={this.props.videogamesFilteredOrdered}/>
                         </div>}
                     </div>
-                    :<div>No hay videojuegos</div>}
+                    :<div className="no_games">No se encontraron resultados<img src="https://www.pinnyshop.com/wp-content/uploads/2020/01/pin_game_over_mario.png"/></div>}
                 </div>
-                :<div className="loading"><h1>Cargando</h1><img src="http://4.bp.blogspot.com/-zuJAw7vs6ss/VHW_qDoSGEI/AAAAAAAABcU/U1KJ-C9DAuc/s1600/space%2Binvaders.gif" /></div>}
+                :<div className="loading"><h1>Cargando</h1><img alt="cargando" src="http://4.bp.blogspot.com/-zuJAw7vs6ss/VHW_qDoSGEI/AAAAAAAABcU/U1KJ-C9DAuc/s1600/space%2Binvaders.gif" /></div>}
             </div>
         )
     }

@@ -19,7 +19,7 @@ export default function NavBar() {
             </div>
             <div className="buscador">
                 <input value={state} placeholder="Buscar por nombre" onChange={handleInputChange}/>
-                <button ><Link to={`videogames?name=${state}`} >Buscar</Link></button>
+                <Link to={`videogames?name=${state}`} ><button >Buscar</button></Link>
             </div>
         </nav>
     )

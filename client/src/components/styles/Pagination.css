@@ -6,7 +6,8 @@
 .page_buttons{
     display: flex;
     justify-content: center;
-
+    padding: 15px;
+   
 }
 
 .page_buttons label{
@@ -18,4 +19,11 @@
 
 .page_buttons input{
     width: 60px;
+    border: 3px lime solid;
+    background-color: black;
+    color:lime;
+    border-radius: 10px;
+}
+.page_buttons input:disabled{
+    display: none;
 }

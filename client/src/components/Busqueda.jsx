@@ -8,7 +8,7 @@ export default class Busqueda extends Component{
     }
     render(){
         return(
-            <div className="card">
+            <div className="cards">
                 {this.props.hasOwnProperty("videogames") && this.props.videogames.map(elem=>{
                     return (<VideogameCard id={elem.id} nombre={elem.name} imagen={elem.image} generos={elem.genres} />)
                 })}

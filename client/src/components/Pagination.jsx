@@ -7,7 +7,7 @@ import './styles/Busqueda.css'
 export default class Pagination extends Component{
     constructor(props){
         super(props)
-        this.state={videogames:this.props.videogames,currentPage:0}
+        this.state={currentPage:0}
         this.nextPage=this.nextPage.bind(this)
         this.prevPage=this.prevPage.bind(this)
     }
@@ -23,17 +23,18 @@ export default class Pagination extends Component{
     }
 
     render(){
+        console.log(this.props.videogames)
         return(
             <div className="pagination">
                 <div className="cards">
-                    {this.state.videogames.slice(15*this.state.currentPage,(this.state.currentPage*15)+15).map((elem)=>{
+                    {this.props.videogames.slice(15*this.state.currentPage,(this.state.currentPage*15)+15).map((elem)=>{
                         return (<VideogameCard id={elem.id} nombre={elem.name} imagen={elem.image} generos={elem.genres} />)
                     })}
                 </div>
                 <div className="page_buttons">
-                    <input type='button' value="<==" disabled={!this.state.currentPage} onClick={this.prevPage}/>
+                    <input type='button' value="<--" disabled={!this.state.currentPage} onClick={this.prevPage}/>
                     <label>{this.state.currentPage+1}</label>
-                    <input type='button' value="==>"  onClick={this.nextPage} disabled={(Math.floor((this.state.videogames.length-1)/15)<=this.state.currentPage)?true:false}/>
+                    <input type='button' value="-->"  onClick={this.nextPage} disabled={(Math.floor((this.props.videogames.length-1)/15)<=this.state.currentPage)?true:false}/>
                 </div>
             </div>
         )

@@ -2,16 +2,20 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 15px 15px;
     background: linear-gradient(to bottom,blue,cyan);
-    
-    font-variant: small-caps;
+    font-family: pressStart;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.links{
+    padding: 10px;
 }
 
 .selected{
-    padding: 20px 15px;
+    padding: 30px 20px 30px 20px;
     border-radius: 10px 0px 10px 0px;
-    background:linear-gradient(to bottom,  midnightblue,blue);
+    background:linear-gradient(to bottom,  yellow,lime);
 }
 
 .links a{
@@ -20,19 +24,25 @@
     color: white;
 }
 
-.buscador a{
-    text-decoration: none;
-    color:white
+.buscador{
+    padding-right: 30px;
+    
 }
 
 .buscador input{
-    
+    height: 25px;
     border-radius: 10px;
+    font-family: fontTwo;
+    font-size: 20px;
 }
 
-.buscador button{
+.buscador a button{
     background:linear-gradient(to bottom,  midnightblue,blue);
+    color: white;
+    height: 30px;
     margin-left: 10px;
     border-radius: 10px;
+    font-family: fontTwo;
+    font-size: 20px;
 }
 

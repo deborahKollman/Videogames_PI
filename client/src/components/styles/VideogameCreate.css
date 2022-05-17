@@ -7,50 +7,69 @@
     min-height: 100%;
     background-color: #480B7B;
     color: white;
-    
+    font-family: fontTwo;
+    font-size: 25px;
 }
 
 .create h1{
     -webkit-text-stroke: 0.5px;
     -webkit-text-stroke-color: black;
+    font-family: pressStart;
+    font-size: 40px;
 }
 
 .create_options{
     display: flex;
     flex-direction: row;
-    margin: 10px;
+    padding: 10px;
 }
 
 .create_options input{
     margin-left: 5px;
-    margin-right: 10px;
+    font-family: fontTwo;
+    font-size: 25px;
 }
 
 .create_options select{
     margin-left: 5px;
     margin-right: 20px;
+    font-family: fontTwo;
+    font-size: 25px;
+}
+
+.create_options button{
+    font-family: fontTwo;
+    font-size: 25px;
 }
 
 .create_lists{
     display: flex;
     flex-wrap: wrap;
-    
+    font-family: fontTwo;
+    font-size: 25px;
+    color: white;
 }
 
 .create_lists label{
-    padding-left: 30px;
-}
-
-.create_lists li{
-    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: lime;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .create_errors{
-    color: red;
+    padding: 5px;
+    background-color: red;
+    color: white;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .create_button{
-    width: 100px;
+    width: 200px;
+    font-family: fontTwo;
+    font-size: 25px;
+    margin: 20px;
 }
 
 .create_message{

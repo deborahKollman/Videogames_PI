@@ -18,14 +18,14 @@ export default class VideogameCard extends Component{
                         <img src={this.props.imagen} alt="Imagen"/>
                         <div className="genres">
                             {this.props.generos.map((elem)=>{
-                                return(<label>{elem.name}</label>)
+                                return(<label>{`>${elem.name}`}</label>)
                             })}
                         </div>
-                        <label><Link to={`/videogames/videogame/${this.props.id}`} >Jugar ahora</Link></label>
+                        <label><Link to={`/videogames/videogame/${this.props.id}`} >Entrar ahora</Link></label>
                     </div>
                     <div className="game_buttons">
-                        <img src="https://cdn-icons-png.flaticon.com/512/37/37434.png"/>
-                        <img src="https://cdn-icons-png.flaticon.com/512/38/38462.png"/>
+                        <img alt="left" src="https://cdn-icons-png.flaticon.com/512/37/37434.png"/>
+                        <img alt="right" src="https://cdn-icons-png.flaticon.com/512/38/38462.png"/>
                     </div>
                 </div>:
                 <h1>Cargando card</h1>

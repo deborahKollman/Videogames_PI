@@ -1,5 +1,16 @@
+@font-face{
+  font-family: pressStart;
+  src:url('PressStart2P-Regular.ttf')
+}
+
+@font-face{
+  font-family: fontTwo;
+  src:url('VT323-Regular.ttf')
+}
+
 .App {
   text-align: center;
+  
 }
 
 .App-logo {

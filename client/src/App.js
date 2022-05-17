@@ -9,7 +9,7 @@ import VideogameDetail from './components/VideogameDetail.jsx'
 
 function App() {
   return (
-    <div>
+    <div className='App' >
       <Route exact path='/' render={()=>(<LandingPage/>)}/>{/* Home */}
      <Route path='/videogames' render={()=>(<NavBar/>)}/> {/* NavBar */}
      <Route exact path='/videogames' render={({match,location})=>(<Home match={match} location={location} />)}/>{/* Home */}

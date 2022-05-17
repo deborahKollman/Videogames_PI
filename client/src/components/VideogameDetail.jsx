@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { $CombinedState } from 'redux';
 import { getVideogameDetail } from '../redux/actions';
 import './styles/VideogameDetail.css'
+import './styles/Home.css'
 
 export default function VideogameDetail(){
     const dispatch=useDispatch();
@@ -11,7 +12,6 @@ export default function VideogameDetail(){
     const params=useParams()
     useEffect(()=>{
         dispatch(getVideogameDetail(params.idVideogame))
-        console.log(videogameDetail)
     },[])
 
 
@@ -21,11 +21,15 @@ export default function VideogameDetail(){
                 <div className='game_details'>
                     <div className='game_title'>
                     <h1>{videogameDetail.name}</h1>
-                    {params.idVideogame.length===36?<p>{videogameDetail.description}</p>:
-                    <div dangerouslySetInnerHTML={{__html:`${videogameDetail.description}`}}></div>}
+                    <img src={videogameDetail.image} alt="imagen" />
+                        
                     </div>
                     <div className='game_body'>
-                        <img src={videogameDetail.image} alt="imagen" />
+                        <div className='game_description'>
+                        <h2>Acerca de</h2>
+                        {params.idVideogame.length===36?<p>{videogameDetail.description}</p>:
+                        <div dangerouslySetInnerHTML={{__html:`${videogameDetail.description}`}}></div>}
+                        </div>
                         <div className='game_options'>
                         <p>Fecha de lanzamiento: {videogameDetail.released}</p>
                         <p>Rating: {videogameDetail.rating}</p>
@@ -35,14 +39,19 @@ export default function VideogameDetail(){
                         })
                         }</ul>
                         <p>Plataformas:</p>
+                        {params.idVideogame.length===36?
                         <ul>{videogameDetail.platforms.map((elem)=>{
                             return(<li>{elem.name}</li>)
                         })}
+                        </ul>:<ul>{videogameDetail.platforms.map((elem)=>{
+                            return(<li>{elem.platform.name}</li>)
+                        })}
                         </ul>
+                        }
                         </div>
                     </div>
                 </div>:
-                <h1>Cargando detalles</h1>
+                <h1 className='loading'>Cargando videojuego</h1>
             }
         </div>
     )

@@ -1,6 +1,6 @@
 .landing_page{
     display: flex;
-    background-image: url("https://media.istockphoto.com/photos/dynamic-retro-background-picture-id1200128505?b=1&k=6&m=1200128505&s=170667a&w=0&h=YgS7enlSLxOSzDHmF4c959LsIUXCq-QjXt4kMgjNN-E=");
+    background-image: url("https://s3.envato.com/files/31a57fe0-95ee-45dd-a83b-383fc6500473/inline_image_preview.jpg");
     background-size: cover;
     position: fixed;
     top:0;
@@ -11,36 +11,35 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-variant: small-caps;
-    text-shadow: 2px 2px white;
+    text-shadow: 2px 2px black;
+    
 }
 
 .landing_page h1{
-    font-size:80px;
-}
-
-.landing_page p{
-    font-size: 80px;
+    font-size:50px;
+    font-family: pressStart;
+    
+    color:white;
 }
 
 .landing_page button{
     font-size: 60px;
-    background: linear-gradient(to bottom, violet, darkviolet);
+    background: linear-gradient(to bottom, magenta, yellow);
     border-radius: 15px;
     border-width: 10px;
+    padding: 20px;
+    font-family: pressStart;
+    color: black;
 }
 
 .landing_page button:hover{
     font-size: 60px;
-    background: linear-gradient(to bottom, violet, darkviolet);
+    background: linear-gradient(to bottom, blue,lime);
     border-radius: 15px;
     border-width: 10px;
     border-color: white;
+    color: white;
 }
 
-.Link{
-    text-decoration: none;
-    color: black;
-}
+
 
