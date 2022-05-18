@@ -39,15 +39,10 @@ export default function VideogameDetail(){
                         })
                         }</ul>
                         <p>Plataformas:</p>
-                        {params.idVideogame.length===36?
                         <ul>{videogameDetail.platforms.map((elem)=>{
-                            return(<li>{elem.name}</li>)
-                        })}
-                        </ul>:<ul>{videogameDetail.platforms.map((elem)=>{
                             return(<li>{elem.platform.name}</li>)
                         })}
                         </ul>
-                        }
                         </div>
                     </div>
                 </div>:

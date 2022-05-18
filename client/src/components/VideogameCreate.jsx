@@ -57,10 +57,10 @@ export default function VideogameCreate(){
         const newPlatform= platforms[platformId]
         let esta=false;
         newVideogamePlatforms.forEach(elem=>{
-            if(elem.name===newPlatform) esta=true
+            if(elem.platform.name===newPlatform) esta=true
         })
         if(!esta){
-            newVideogamePlatforms.push({name:newPlatform})
+            newVideogamePlatforms.push({platform:{name:newPlatform}})
             dispatch(setVideogame({...newVideogame,platforms:newVideogamePlatforms}))
             dispatch(setVideogameErrors(validate({...newVideogame,platforms:newVideogamePlatforms})))
         }
@@ -106,7 +106,7 @@ export default function VideogameCreate(){
             </div>
             {newVideogame.hasOwnProperty("platforms")?
             <div className='create_lists'>
-            {newVideogame.platforms.map((elem)=><label>{elem.name}</label>)}
+            {newVideogame.platforms.map((elem)=><label>{elem.platform.name}</label>)}
             </div>:<div/>
             }
             <button className='create_button' disabled={Object.values(newVideogameErrors).length?true:false} onClick={handleSubmitVideogame} >Crear videojuego</button>

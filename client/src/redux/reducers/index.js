@@ -43,18 +43,20 @@ const reducer=(state=initialState,action)=>{
             }
         }
         case(ADD_VIDEOGAME):{
-            var error='ERROR';
-            if(action.payload.contains(error)){
+            const errorStatus=404;
+            console.log(state)
+            console.log(action.payload)
+            if(action.payload.status===errorStatus){
                 return{
                     ...state,
-                    newVideogameMessage:action.payload
+                    newVideogameMessage:action.payload.data
                 }
             }else{
                 return{
                     ...state,
                     newVideogame:{name:"",description:"",rating:"",released:"",image:"",genres:[],platforms:[]},
                     newVideogameErrors:{name:"",description:"",rating:"",released:"",image:"",genres:[],platforms:[]},
-                    newVideogameMessage:action.payload
+                    newVideogameMessage:action.payload.data
                 }
             }
             

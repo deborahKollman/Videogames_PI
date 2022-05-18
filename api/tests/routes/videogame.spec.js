@@ -61,6 +61,8 @@ describe('Videogame routes', () => {
         done();
       })
     }).timeout(10000)
-    
+    afterEach(()=>{
+      conn.close()
+    })
   });
 });
