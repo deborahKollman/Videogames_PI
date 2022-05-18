@@ -19,12 +19,13 @@ module.exports = (sequelize) => {
       allowNull:false
     },
     released:{
-      type:DataTypes.DATEONLY,
-      defaultValue:DataTypes.NOW
+      type:DataTypes.DATEONLY
     },
     rating:{
       type:DataTypes.FLOAT,
-      defaultValue:0
+      validate:{
+        isFloat:true
+      }
     },
     platforms:{
       type:DataTypes.ARRAY(DataTypes.JSON),
