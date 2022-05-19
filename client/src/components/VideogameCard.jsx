@@ -14,7 +14,7 @@ export default class VideogameCard extends Component{
                 {this.props.hasOwnProperty("nombre")?
                 <div className="game_card">
                     <div className="card_details">
-                        <h2>{this.props.nombre}</h2>
+                        <p>{this.props.nombre}</p>
                         <img src={this.props.imagen} alt="Imagen"/>
                         <div className="genres">
                             {this.props.generos.map((elem)=>{

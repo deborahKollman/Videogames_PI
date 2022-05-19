@@ -6,22 +6,24 @@
 .page_buttons{
     display: flex;
     justify-content: center;
-    padding: 15px;
-   
+    align-items: center;
 }
 
 .page_buttons label{
-    font-size: 30px;
+    font-size: 20px;
     color: white;
     margin-left: 30px;
     margin-right: 30px;
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: magenta;
 }
 
 .page_buttons input{
-    width: 60px;
-    border: 3px lime solid;
-    background-color: black;
-    color:lime;
+    width: 50px;
+    height: 30px;
+    border: 3px white solid;
+    background: linear-gradient(to bottom, magenta, orange);
+    color:white;
     border-radius: 10px;
 }
 .page_buttons input:disabled{

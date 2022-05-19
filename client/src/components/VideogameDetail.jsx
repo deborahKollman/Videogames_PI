@@ -45,8 +45,8 @@ export default function VideogameDetail(){
                         </ul>
                         </div>
                     </div>
-                </div>:
-                <h1 className='loading'>Cargando videojuego</h1>
+                </div >:
+                <div className='loading'><h1>Cargando videojuego</h1></div>
             }
         </div>
     )

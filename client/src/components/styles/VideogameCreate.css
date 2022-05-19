@@ -9,11 +9,13 @@
     color: white;
     font-family: fontTwo;
     font-size: 25px;
+    -webkit-text-stroke: 0.3px;
+    -webkit-text-stroke-color: black;
 }
 
 .create h1{
     -webkit-text-stroke: 0.5px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: magenta;
     font-family: pressStart;
     font-size: 40px;
 }
@@ -77,4 +79,24 @@
     display: flex;
     align-self: flex-start;
     font-size: 40px;
+}
+
+@media screen and (max-width:400px) {
+    .create{
+        padding: 1%;
+    }
+    
+    .create h1{
+        font-size: 20px;
+    }
+
+    .create_options{
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .create_errors{
+        border-radius: 0px 0px 10px 10px;
+    }
 }
