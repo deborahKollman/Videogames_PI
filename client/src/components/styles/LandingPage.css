@@ -1,6 +1,6 @@
 .landing_page{
     display: flex;
-    background-image: url("https://s3.envato.com/files/31a57fe0-95ee-45dd-a83b-383fc6500473/inline_image_preview.jpg");
+    background-image: url(../../img/landing.jpg);
     background-size: cover;
     position: fixed;
     top:0;

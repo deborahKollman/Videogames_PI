@@ -4,6 +4,8 @@ import Pagination from './Pagination.jsx'
 import { getAllVideogames, getGenres, getVideogamesByName, filterVideogames,filterGenre, orderVideogames, filterOrder} from '../redux/actions/index.js'
 import Busqueda from "./Busqueda.jsx";
 import './styles/Home.css'
+import loading from '../img/loading.gif'
+import no_game from '../img/game_over.png'
 
 class Home extends Component{
     constructor(props){
@@ -103,9 +105,9 @@ class Home extends Component{
                             <Busqueda videogames={this.props.videogamesFilteredOrdered}/>
                         </div>}
                     </div>
-                    :<div className="no_games">No se encontraron resultados<img src="https://www.pinnyshop.com/wp-content/uploads/2020/01/pin_game_over_mario.png"/></div>}
+                    :<div className="no_games">No se encontraron resultados<img src={no_game}/></div>}
                 </div>
-                :<div className="loading"><h1>Cargando</h1><img alt="cargando" src="http://4.bp.blogspot.com/-zuJAw7vs6ss/VHW_qDoSGEI/AAAAAAAABcU/U1KJ-C9DAuc/s1600/space%2Binvaders.gif" /></div>}
+                :<div className="loading"><h1>Cargando</h1><img alt="cargando" src={loading} /></div>}
             </div>
         )
     }

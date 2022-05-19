@@ -1,6 +1,8 @@
 import { Component } from "react";
 import {Link} from 'react-router-dom'
 import './styles/VideogameCard.css'
+import right from '../img/console_right.png'
+import left from '../img/console_left.png'
 
 export default class VideogameCard extends Component{
     constructor(props){
@@ -24,8 +26,8 @@ export default class VideogameCard extends Component{
                         <label><Link to={`/videogames/videogame/${this.props.id}`} >Entrar ahora</Link></label>
                     </div>
                     <div className="game_buttons">
-                        <img alt="left" src="https://cdn-icons-png.flaticon.com/512/37/37434.png"/>
-                        <img alt="right" src="https://cdn-icons-png.flaticon.com/512/38/38462.png"/>
+                        <img alt="left" src={left}/>
+                        <img alt="right" src={right}/>
                     </div>
                 </div>:
                 <h1>Cargando card</h1>

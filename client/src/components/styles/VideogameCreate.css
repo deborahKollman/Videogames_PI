@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     padding: 50px 60px 60px 60px;
-    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/002/015/090/small/retro-style-game-pattern-grid-background-free-video.jpg");
+    background-image: url(../../img/background.jpg);
     max-width: 100%;
     min-height: 100%;
     background-color: #480B7B;
