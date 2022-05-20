@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const getAllVideogames=()=>{
     return function(dispatch){
-        return axios.get('http://localhost:3001/videogames')
+        return axios.get('/videogames')
         .then(response=>{dispatch({type:GET_VIDEOGAMES,payload:response.data})})
         .catch(err=>console.log(`ERROR: ${err.message}`))
     }
@@ -12,7 +12,7 @@ export const getAllVideogames=()=>{
 
 export const getVideogameDetail=(idVideogame)=>{
     return function(dispatch){
-        return axios.get(`http://localhost:3001/videogame/${idVideogame}`)
+        return axios.get(`/videogame/${idVideogame}`)
         .then(response=>{dispatch({type:GET_VIDEOGAME_DETAIL,payload:response.data})})
         .catch(err=>console.log(`ERROR: ${err.message}`))
     }
@@ -20,7 +20,7 @@ export const getVideogameDetail=(idVideogame)=>{
 
 export const getVideogamesByName=(name)=>{
     return function(dispatch){
-        return axios.get(`http://localhost:3001/videogames?name=${name}`)
+        return axios.get(`/videogames?name=${name}`)
         .then(response=>{dispatch({type:GET_VIDEOGAME_BY_NAME,payload:response.data})})
         .catch(err=>console.log(`ERROR: ${err.message}`))
     }
@@ -28,7 +28,7 @@ export const getVideogamesByName=(name)=>{
 
 export const getGenres=()=>{
     return function(dispatch){
-        return axios.get('http://localhost:3001/genres')
+        return axios.get('/genres')
         .then(response=>dispatch({type:GET_GENRES,payload:response.data}))
         
         .catch(err=>console.log(`ERROR: ${err.message}`))
@@ -38,7 +38,7 @@ export const getGenres=()=>{
 
 export const addVideogame=({name,description,image,released, rating,genres, platforms})=>{
     return function(dispatch){
-        return axios.post('http://localhost:3001/videogame',
+        return axios.post('/videogame',
         {name,description,image,released, rating:parseFloat(rating), platforms,genres})
         .then(response=>dispatch({type:ADD_VIDEOGAME,payload:response}))
         .catch(response=>dispatch({type:ADD_VIDEOGAME,payload:response}))
