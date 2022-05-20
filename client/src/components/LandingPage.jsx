@@ -6,7 +6,7 @@ export default class LandingPage extends Component{
     render(){
         return(
             <div className="landing_page">
-                <p>Bienvenido a Henry Videogames</p>
+                <p>Bienvenido a: Proyecto individual - Videogames </p>
                 <Link className="Link" to='/videogames'><button>{`>Entrar ahora`}</button></Link>
             </div>
         )
