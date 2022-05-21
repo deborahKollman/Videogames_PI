@@ -19,10 +19,12 @@ module.exports = (sequelize) => {
       allowNull:false
     },
     released:{
-      type:DataTypes.DATEONLY
+      type:DataTypes.DATEONLY,
+      defaultValue:DataTypes.NOW
     },
     rating:{
       type:DataTypes.FLOAT,
+      defaultValue:0,
       validate:{
         isFloat:true
       }
@@ -33,7 +35,6 @@ module.exports = (sequelize) => {
     },
     image:{
       type:DataTypes.TEXT,
-      defaultValue:''
     }
   },{
     timestamps:false

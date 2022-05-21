@@ -33,7 +33,7 @@ export default function VideogameDetail(){
                         <div className='game_options'>
                         <p>Fecha de lanzamiento: {videogameDetail.released}</p>
                         <p>Rating: {videogameDetail.rating}</p>
-                        <p>Generos</p>
+                        <p>Generos:</p>
                         <ul>{videogameDetail.genres.map((elem)=>{
                             return(<li>{elem.name}</li>)
                         })

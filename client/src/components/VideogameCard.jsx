@@ -23,7 +23,7 @@ export default class VideogameCard extends Component{
                                 return(<label>{`>${elem.name}`}</label>)
                             })}
                         </div>
-                        <label><Link to={`/videogames/videogame/${this.props.id}`} >Entrar ahora</Link></label>
+                        <Link to={`/videogames/videogame/${this.props.id}`} className="enter_game"><label >Entrar ahora</label></Link>
                     </div>
                     <div className="game_buttons">
                         <img alt="left" src={left}/>

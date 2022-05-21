@@ -23,7 +23,6 @@ export default class Pagination extends Component{
     }
 
     render(){
-        console.log(this.props.videogames)
         return(
             <div className="pagination">
                 <div className="page_buttons">

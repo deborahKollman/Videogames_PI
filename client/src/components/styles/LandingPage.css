@@ -13,31 +13,32 @@
     justify-content: center;
     text-shadow: 2px 2px black;
     
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: magenta;
+    color:white;
+    
 }
 
 .landing_page p{
     font-size:20px;
     font-family: pressStart;
+}
+
+.landing_page button{
+    font-size: 15px;
+    background: linear-gradient(to bottom, black, grey);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: pressStart;
+    
     -webkit-text-stroke: 0.5px;
     -webkit-text-stroke-color: magenta;
     color:white;
 }
 
-.landing_page button{
-    font-size: 15px;
-    background: linear-gradient(to bottom, magenta, yellow);
-    border-radius: 15px;
-    border-width: 10px;
-    padding: 20px;
-    font-family: pressStart;
-    color: black;
-}
-
 .landing_page button:hover{
-     background: linear-gradient(to bottom, blue,lime);
-    
-    border-color: white;
-    color: white;
+    background: linear-gradient(to bottom, white, grey);
+    color: magenta;
 }
 
 @media screen and (max-width:400px) {
@@ -48,7 +49,6 @@
     .landing_page button{
         font-size: 10px;
         padding: 10px;
-        border-width: 5px;
     }
 }
 

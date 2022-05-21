@@ -44,12 +44,10 @@ const reducer=(state=initialState,action)=>{
         }
         case(ADD_VIDEOGAME):{
             const errorStatus=404;
-            console.log(state)
-            console.log(action.payload)
             if(action.payload.status===errorStatus){
                 return{
                     ...state,
-                    newVideogameMessage:action.payload.data
+                    newVideogameMessage:action.payload.data.response
                 }
             }else{
                 return{

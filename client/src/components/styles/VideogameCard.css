@@ -32,10 +32,11 @@
     max-width: 200px;
 }
 
-.card_details a{
+.enter_game{
     text-decoration: none;
     color: white;
     color: lime;
+    -webkit-text-stroke: 0px;
 }
 
 .genres{

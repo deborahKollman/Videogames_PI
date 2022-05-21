@@ -1,5 +1,6 @@
 import {GET_VIDEOGAMES,GET_GENRES,ADD_VIDEOGAME, SET_VIDEOGAME, SET_ERRORS,GET_VIDEOGAME_DETAIL, GET_VIDEOGAME_BY_NAME, ORDER_VIDEOGAMES, FILTER_VIDEOGAMES, FILTER_GENRES,SET_FILTER_ORDER} from '../action_defs/index.js'
 import axios from 'axios'
+import no_image from '../../img/no_image.png'
 
 export const getAllVideogames=()=>{
     return function(dispatch){
@@ -37,9 +38,12 @@ export const getGenres=()=>{
 }
 
 export const addVideogame=({name,description,image,released, rating,genres, platforms})=>{
+    if(released===""){ released=undefined}
+    if(rating===""){rating=undefined }else{rating=parseFloat(rating)}
+    if(image===""){image=no_image}
     return function(dispatch){
         return axios.post('/videogame',
-        {name,description,image,released, rating:parseFloat(rating), platforms,genres})
+        {name,description,image,released, rating, platforms,genres})
         .then(response=>dispatch({type:ADD_VIDEOGAME,payload:response}))
         .catch(response=>dispatch({type:ADD_VIDEOGAME,payload:response}))
     }

@@ -42,7 +42,7 @@ router.get('/:idVideogame',async(req,res,next)=>{
 router.post('/',async(req,res,next)=>{
     
     try {
-        const {name,description,image,released, rating, platforms,genres}=req.body;
+        var {name,description,image,released, rating, platforms,genres}=req.body;
         const newVideogame=await Videogame.create({name,description,released, rating, platforms,image})
         genres.forEach(element => {
             newVideogame.addGenres(element.id)
