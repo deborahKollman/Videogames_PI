@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:dev":"nodemon -L",
-    "test": "mocha -w ./tests/**/*.spec.js"
+    "test": "jest --verbose --detectOpenHandles"
   },
   "author": "Henry",
   "license": "ISC",
@@ -31,6 +31,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
+    "jest": "^27.5.1",
     "nodemon": "^2.0.16",
     "supertest": "^6.0.1",
     "supertest-session": "^4.1.0"
