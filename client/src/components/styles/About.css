@@ -1,0 +1,47 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 60px 60px 60px;
+    background-image: url(../../img/background.jpg);
+    max-width: 100%;
+    min-height:100%;
+    background-color: #480B7B;
+    color: white;
+    font-family: pressStart;
+    font-size: 25px;
+    -webkit-text-stroke: 0.3px;
+    -webkit-text-stroke-color: magenta;
+    text-align: justify;
+}
+
+.about h2{
+    text-decoration: underline;
+    text-align: center;
+}
+
+.about p{
+    font-size: 17px;
+}
+
+.about ul{
+    list-style-type: '>';
+}
+
+.about li{
+    font-size: 15px;
+
+}
+
+@media screen and (max-width:500px) {
+    .about h2{
+        font-size: 20px;
+    }
+
+    .about p{
+        font-size: 10px;
+    }
+
+    .about li{
+        font-size: 10px;
+    }
+}

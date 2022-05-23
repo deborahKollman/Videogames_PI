@@ -1,20 +1,20 @@
-import { render, screen } from '@testing-library/react';
+import '@testing-library/react';
+import React from 'react';
+import { MemoryRouter, Link } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { configure, mount } from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import VideogameCard from '../src/components/VideogameCard';
 
-test('renders learn react link', () => {
-  render(<VideogameCard/>);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+configure({ adapter: new Adapter() });
 
 describe('<VideogameCard />',()=>{
   let videogameCard, state, store;
   const mockStore = configureStore([thunk]);
-  let videogames = [];
-  state = {
-    videogames: [],
-    videogameDetails: {},
-  };
+  let videogames = [{id:1,name:"Game 1",image:"",genres:[{id:1,name:"Action"}]}];
+  
   store = mockStore(state);
   beforeEach(() => {
     productCard = (videogame) =>
@@ -34,6 +34,11 @@ describe('<VideogameCard />',()=>{
 
   afterEach(() => jest.restoreAllMocks());
   
+  describe('Structure',()=>{
+    it('should render the name of the videogame',()=>{
+      expect(videogameCard(videogames[0])).find('p').at(0).text().toBe('Game 1')
+    })
+  })
 })
   
 

@@ -15,7 +15,10 @@ export default function NavBar() {
         <nav className="nav_bar">
             <div className="links">
                 <NavLink to='/videogames' activeClassName="selected" exact>Home</NavLink>
+                <label>|</label>
                 <NavLink to='/videogames/create' activeClassName="selected" exact>Crear</NavLink>
+                <label>|</label>
+                <NavLink to='/videogames/about'  activeClassName="selected" exact>Acerca de</NavLink>
             </div>
             <div className="buscador">
                 <input value={state} placeholder="Buscar por nombre" onChange={handleInputChange}/>
