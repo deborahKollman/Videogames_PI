@@ -13,7 +13,7 @@ export default function About(){
                 <li>Redux</li>
                 <li>Express</li>
                 <li>Sequelize</li>
-                <li>Postgress</li>
+                <li>PostgreSQL</li>
                 <li>API: rawg (https://rawg.io/apidocs)</li>
                 <li>Heroku (back-end deploy)</li>
                 <li>Vercel (front-end deploy)</li>
