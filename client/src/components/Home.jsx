@@ -58,7 +58,7 @@ class Home extends Component{
     render(){
         return(
             <div className="home_page">
-                {this.props.videogames.length!==0?
+                {(this.props.videogames.length!==0 || this.props.location.search!=="")?
                 <div>
                     <div className="home_options">
                         <div className="home_title">

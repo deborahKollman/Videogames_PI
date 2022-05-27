@@ -71,6 +71,24 @@ export default function VideogameCreate(){
         
         dispatch(addVideogame(newVideogame))
     }
+
+    function handleRemoveGenre(e){
+        e.preventDefault();
+        let newGenres=newVideogame.genres.filter((elem)=>{
+            if(elem.id!==parseInt(e.target.value)) return elem;
+        });
+        dispatch(setVideogame({...newVideogame,genres:newGenres}))
+        dispatch(setVideogameErrors(validate({...newVideogame,genres:newGenres})))
+    }
+
+    function handleRemovePlatform(e){
+        e.preventDefault();
+        let newPlatforms=newVideogame.platforms.filter((elem,index)=>{
+            if(index!==parseInt(e.target.value)) return elem;
+        });
+        dispatch(setVideogame({...newVideogame,platforms:newPlatforms}))
+        dispatch(setVideogameErrors(validate({...newVideogame,platforms:newPlatforms})))
+    }
     
     return (
         <div className='create'>
@@ -92,7 +110,7 @@ export default function VideogameCreate(){
             
             {newVideogame.hasOwnProperty("genres")?
             <div className='create_lists'>
-            {newVideogame.genres.map((elem)=><label>{elem.name}</label>)}
+            {newVideogame.genres.map((elem)=><form  ><label>{elem.name}</label><button type='submit' value={elem.id} onClick={handleRemoveGenre}>X</button></form>)}
             </div>:<div/>
             }
             </div>
@@ -108,7 +126,7 @@ export default function VideogameCreate(){
             
             {newVideogame.hasOwnProperty("platforms")?
             <div className='create_lists'>
-            {newVideogame.platforms.map((elem)=><label>{elem.platform.name}</label>)}
+            {newVideogame.platforms.map((elem,index)=><form><label>{elem.platform.name}</label><button value={index} onClick={handleRemovePlatform} >X</button></form>)}
             </div>:<div/>
             }
             </div>

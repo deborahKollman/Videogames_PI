@@ -12,6 +12,16 @@ export default class Pagination extends Component{
         this.prevPage=this.prevPage.bind(this)
     }
 
+    componentDidMount(){
+        this.setState({currentPage:0})
+    }
+
+    componentDidUpdate(preProps){
+        if(this.props.videogames !== preProps.videogames){
+            this.setState({currentPage:0})
+        }
+    }
+
     prevPage(e){
         e.preventDefault();
         this.setState({...this.state,currentPage:this.state.currentPage-1})

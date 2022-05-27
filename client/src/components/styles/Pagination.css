@@ -24,6 +24,7 @@
     border: 3px white solid;
     background: linear-gradient(to bottom, magenta, orange);
     color:white;
+    font-weight:900;
     border-radius: 10px;
 }
 .page_buttons input:disabled{

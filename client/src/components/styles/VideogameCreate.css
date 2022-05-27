@@ -2,10 +2,7 @@
     display: flex;
     flex-direction: column;
     padding: 50px 60px 60px 60px;
-    background-image: url(../../img/background.jpg);
-    max-width: 100%;
-    min-height: 100%;
-    background-color: #480B7B;
+    
     color: white;
     font-family: fontTwo;
     font-size: 25px;
@@ -52,13 +49,18 @@
     color: white;
 }
 
-.create_lists label{
+.create_lists form{
     padding: 1px 10px 0px 10px ;
     border-radius: 10px;
     background:linear-gradient(to bottom, black, grey);
     border: 2px magenta solid;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.create_lists button{
+    border-radius: 20px;
+    margin-left: 5px;
 }
 
 .create_errors{
@@ -99,14 +101,22 @@
     }
 
     .create_options{
-        padding: 1%;
+        padding: 2%;
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        
+    }
+
+    .create_options input{
+        margin-left: 0%;
     }
 
     .create_errors{
         border-radius: 0px 0px 10px 10px;
     }
-
     
+    .created{
+        font-size: 15px;
+    }
 }

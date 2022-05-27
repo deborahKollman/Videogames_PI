@@ -1,8 +1,5 @@
 .home_page{
-    background-image: url(../../img/background.jpg);
-    min-width: 100%;
-    min-height: 100%;
-    background-color: #480B7B;
+    
     font-family: pressStart;
     color: white;
     -webkit-text-stroke: 0.5px;
@@ -56,6 +53,7 @@
     font-family: fontTwo;
     font-size: 20px;
     margin-top: 10px;
+    border-radius: 10px;
 }
 
 .loading{
@@ -72,6 +70,7 @@
 .no_games{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     color:white;
     font-size: 40px;
@@ -96,6 +95,24 @@
         flex-direction: column;
     }
 
+    .filter_order_options div{
+        padding: 0%;
+    }
+
+    .filter_order_options label{
+        display: none;
+    }
+
+    .filter_order_options select{
+        background:linear-gradient(to bottom,black,grey);
+        color: white;
+        margin-top: 0%;
+    }
+
+    .filter_order_options option{
+        background-color: black;
+    }
+
     .loading{
     
         display:flex;
@@ -108,13 +125,14 @@
     }
 
     .loading img{
-        width: fit-content;
+        width: 95%;
     }
 
     .no_games{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         color:white;
         font-size: 20px;
     }
