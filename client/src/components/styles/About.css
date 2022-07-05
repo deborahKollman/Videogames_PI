@@ -29,6 +29,11 @@
 
 }
 
+.about li a{
+    color: white;
+    -webkit-text-stroke-color: lime;
+}
+
 @media screen and (max-width:500px) {
     .about{
         padding: 10px;

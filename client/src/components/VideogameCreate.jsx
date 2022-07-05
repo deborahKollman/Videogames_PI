@@ -15,7 +15,7 @@ export default function VideogameCreate(){
         dispatch(getGenres())
         dispatch(setVideogame({name:"",description:"",rating:"",released:"",image:"",genres:[],platforms:[]}))
         dispatch(setVideogameErrors({name:"",description:"",rating:"",released:"",image:"",genres:[],platforms:[]}))
-    },[])
+    },[dispatch])
 
     var genreId=4;
     function handleInputChange(e){

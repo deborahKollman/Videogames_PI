@@ -12,7 +12,7 @@ export default function VideogameDetail(){
     const params=useParams()
     useEffect(()=>{
         dispatch(getVideogameDetail(params.idVideogame))
-    },[])
+    },[dispatch])
 
 
     return (
