@@ -22,7 +22,7 @@
 
 ## :page_with_curl: Objective
 
-<p>This project is a SPA (Single Page Application) made for SoyHenry bootcamp.</p>
+<p>This project is a SPA (Single Page Application) designed and developed in the course of three weeks for SoyHenry bootcamp.</p>
 
 ## :desktop_computer: Technologies:
 
