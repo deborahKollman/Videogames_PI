@@ -13,14 +13,12 @@
 <p>Henry Videogames is an application that contains and shows several videogames along with details about them, allowing the viewer to filter, order, search and create new videogames that can be shown in the homepage.</p>
 
 ### :zap: Features:
-<p>
-:black_medium_small_square: Paginating
-:black_medium_small_square: Filter by genre and type
-:black_medium_small_square: Order by rating and name
-:black_medium_small_square: Search by name
-:black_medium_small_square: Page with videogame details
-:black_medium_small_square: Creating new videogames
-</p>
+<p>:black_medium_small_square: Paginating</p>
+<p>:black_medium_small_square: Filter by genre and type</p>
+<p>:black_medium_small_square: Order by rating and name</p>
+<p>:black_medium_small_square: Search by name</p>
+<p>:black_medium_small_square: Page with videogame details</p>
+<p>:black_medium_small_square: Creating new videogames</p>
 
 ## :page_with_curl: Objective
 
@@ -28,13 +26,11 @@
 
 ## :desktop_computer: Technologies:
 
-<p>
-:black_medium_small_square: NodeJS
-:black_medium_small_square: ReactJs - Redux
-:black_medium_small_square: HTML - CSS
-:black_medium_small_square: ExpressJS
-:black_medium_small_square: Sequelize - PostgreSQL
-</p>
+<p>:black_medium_small_square: NodeJS</p>
+<p>:black_medium_small_square: ReactJs - Redux</p>
+<p>:black_medium_small_square: HTML - CSS</p>
+<p>:black_medium_small_square: ExpressJS</p>
+<p>:black_medium_small_square: Sequelize - PostgreSQL</p>
 
 <!--
 ## Objetivos del Proyecto
