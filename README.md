@@ -8,6 +8,32 @@
   <img height="200" src="./videogame.png" />
 </p>
 
+## :video_game: About
+
+Henry Videogames is an application that contains and shows several videogames along with details about them, allowing the viewer to filter, order, search and create new videogames that can be shown in the homepage.
+
+### :zap: Features:
+-Paginating
+-Filter by genre and type
+-Order by rating and name
+-Search by name
+-Page with videogame details
+-Creating new videogames
+
+## :page_with_curl: Objective
+
+This project is a SPA (Single Page Application) made for SoyHenry bootcamp.
+
+## :desktop_computer: Technologies:
+
+:black_medium_small_square: NodeJS
+:black_medium_small_square: ReactJs - Redux
+:black_medium_small_square: HTML - CSS
+:black_medium_small_square: ExpressJS
+:black_medium_small_square: Sequelize - PostgreSQL
+
+
+<!--
 ## Objetivos del Proyecto
 
 - Construir una App utlizando React, Redux, Node y Sequelize.
@@ -175,3 +201,4 @@ __IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y pagin
 - [ ] Al menos tener un componente del frontend con sus tests respectivos
 - [ ] Al menos tener una ruta del backend con sus tests respectivos
 - [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
+-->
