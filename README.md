@@ -10,28 +10,31 @@
 
 ## :video_game: About
 
-Henry Videogames is an application that contains and shows several videogames along with details about them, allowing the viewer to filter, order, search and create new videogames that can be shown in the homepage.
+<p>Henry Videogames is an application that contains and shows several videogames along with details about them, allowing the viewer to filter, order, search and create new videogames that can be shown in the homepage.</p>
 
 ### :zap: Features:
--Paginating
--Filter by genre and type
--Order by rating and name
--Search by name
--Page with videogame details
--Creating new videogames
+<p>
+:black_medium_small_square: Paginating
+:black_medium_small_square: Filter by genre and type
+:black_medium_small_square: Order by rating and name
+:black_medium_small_square: Search by name
+:black_medium_small_square: Page with videogame details
+:black_medium_small_square: Creating new videogames
+</p>
 
 ## :page_with_curl: Objective
 
-This project is a SPA (Single Page Application) made for SoyHenry bootcamp.
+<p>This project is a SPA (Single Page Application) made for SoyHenry bootcamp.</p>
 
 ## :desktop_computer: Technologies:
 
+<p>
 :black_medium_small_square: NodeJS
 :black_medium_small_square: ReactJs - Redux
 :black_medium_small_square: HTML - CSS
 :black_medium_small_square: ExpressJS
 :black_medium_small_square: Sequelize - PostgreSQL
-
+</p>
 
 <!--
 ## Objetivos del Proyecto
